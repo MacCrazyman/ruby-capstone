@@ -10,14 +10,11 @@ class Item
     @archived = false
   end
 
-  def add_genre
-  end
+  def add_genre; end
 
-  def add_label
-  end
+  def add_label; end
 
-  def add_author
-  end
+  def add_author; end
 
   def move_to_archive
     @archived = true if can_be_archived?
