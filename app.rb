@@ -1,8 +1,9 @@
 class App
   attr_accessor :methods
+
   def initialize
     @methods = {
-      1 => -> {list_all_books}
+      1 => -> { list_all_books }
     }
   end
 
