@@ -1,10 +1,13 @@
+require 'time'
+
 class Item
   attr_accessor :publish_date
+  attr_reader :archived
 
-  def intialize(publish_date, archived)
+  def initialize(publish_date)
     @id = Random.rand(1..1000)
     @publish_date = publish_date
-    @archived = archived
+    @archived = false
   end
 
   def add_genre
@@ -17,10 +20,15 @@ class Item
   end
 
   def move_to_archive
+    @archived = true if can_be_archived?
   end
 
   private
 
   def can_be_archived?
+    time = Time.now
+    formatted_date = "#{time.year - 10}-#{time.month}-#{time.day}"
+
+    @publish_date < formatted_date
   end
 end
