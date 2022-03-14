@@ -13,11 +13,13 @@ def main
                   '0. Exit']
 
   input = nil
+  app = App.new
 
   while input != 0
     puts 'Welcome To My Catalog. Pick An Option From The List Below'
     puts choice_array
     input = gets.chomp.to_i
+    app.methods[input].call if input.between?(0,9)
   end
 end
 
