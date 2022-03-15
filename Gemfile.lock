@@ -38,6 +38,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x64-mingw-ucrt
   x64-unknown
 
 DEPENDENCIES
