@@ -11,4 +11,3 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 end
->>>>>>> 092754b114b9e445bda89e61712218058a2041b7

@@ -25,4 +25,3 @@ describe Book do
     end
   end
 end
->>>>>>> 092754b114b9e445bda89e61712218058a2041b7
