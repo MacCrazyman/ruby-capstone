@@ -3,7 +3,7 @@ require_relative './author'
 
 class Item
   attr_accessor :publish_date, :label, :author
-  attr_reader :archived
+  attr_reader :archived, :id
 
   def initialize(publish_date)
     @id = Random.rand(1..1000)
