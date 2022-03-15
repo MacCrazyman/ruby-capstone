@@ -1,6 +1,7 @@
 require_relative './item'
 class MusicAlbum < Item
   attr_accessor :on_spotify
+
   # class: Music Album class.
   #
   # *args  - Arguments from `item` parent

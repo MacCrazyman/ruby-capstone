@@ -18,5 +18,4 @@ describe 'MusicAlbum' do
     @album.move_to_archive
     expect(@album.archived).not_to be archived_before
   end
-
 end
