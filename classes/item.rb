@@ -38,5 +38,9 @@ class Item
   end
 end
 
-date = Item.new('02-02-2020')
-p date
+# date = Item.new('1900-01-01')
+# p date
+# p date.can_be_archived?
+
+# new_item = Item.can_be_archived?
+# p new_item
