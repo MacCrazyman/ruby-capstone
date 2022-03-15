@@ -11,7 +11,9 @@ class Label
   end
 
   def add_item(item)
+    raise ArgumentError, 'item must be of Item class' unless item.instance_of?(Item)
+
     @items.push(item)
-    item.label = self
+    item.add_label = self
   end
 end
