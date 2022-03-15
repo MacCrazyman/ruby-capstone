@@ -14,8 +14,7 @@ describe Author do
 
     it 'test add_item method' do
       @author.add_item(@item)
-      expect(@author.items.length).to eq(1) 
+      expect(@author.items.length).to eq(1)
     end
-
   end
 end

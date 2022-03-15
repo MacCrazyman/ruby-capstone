@@ -1,5 +1,5 @@
 require_relative '../classes/game'
-require_relative '../classes/item.rb'
+require_relative '../classes/item'
 
 describe Game do
   context 'Testing Game class' do
