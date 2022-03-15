@@ -1,7 +1,7 @@
 require 'time'
 
 class Item
-  attr_accessor :publish_date
+  attr_accessor :publish_date, :label
   attr_reader :archived
 
   def initialize(publish_date)
@@ -12,7 +12,10 @@ class Item
 
   def add_genre; end
 
-  def add_label; end
+  def add_label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
+  end
 
   def add_author; end
 

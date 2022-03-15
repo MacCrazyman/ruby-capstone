@@ -1,4 +1,5 @@
 require_relative '../classes/book'
+require_relative '../classes/item'
 
 describe Book do
   before :each do
