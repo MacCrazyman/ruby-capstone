@@ -11,11 +11,12 @@ module UserInput
     label = label_input if user_choice.to_i == 1
     [publisher, cover_state, publish_date, label]
   end
+
   def label_input
     print 'Label title: '
     label_title = gets.chomp
     print 'Label color: '
     label_color = gets.chomp
-    {title: label_title, color: label_color}
+    { title: label_title, color: label_color }
   end
 end

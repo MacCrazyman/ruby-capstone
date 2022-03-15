@@ -1,9 +1,10 @@
 require_relative './IO/user_inputs'
 require_relative './classes/book'
-require_relative './classes/label.rb'
+require_relative './classes/label'
 
 class App
   attr_accessor :methods
+
   include UserInput
 
   def initialize(state)
@@ -54,9 +55,10 @@ class App
     store_label(new_book, label) if label
     p('Book has been created')
   end
+
   def store_label(book, label)
     new_label = Label.new(label[:title], label[:color])
-    book.add_label=(new_label)
+    book.add_label = (new_label)
     @state[:label_list] << new_label
   end
 end
