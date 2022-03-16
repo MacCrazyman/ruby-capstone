@@ -26,5 +26,25 @@ module UserInput
     print 'Is this album on Spotify? [Y/N]'
     on_spotify = gets.chomp.downcase == 'y'
     { publish_date: publish_date, on_spotify: on_spotify }
+    
+  def game_input
+    print 'Is this a multiplayer game? Enter Yes or No: '
+    multiplayer = gets.chomp
+    print 'Enter the date you last played:'
+    last_played_at = gets.chomp
+    print 'Publish Date(yyyy-mm-dd): '
+    publish_date = gets.chomp
+    print 'Do you want yo add an author? (press 1 for yes)'
+    user_choice = gets.chomp
+    author = author_input if user_choice.to_i == 1
+    [multiplayer, last_played_at, publish_date, author]
+  end
+
+  def author_input
+    print 'First Name: '
+    first_name = gets.chomp
+    print 'Label color: '
+    last_name = gets.chomp
+    { first_name: first_name, last_name: last_name }
   end
 end

@@ -1,6 +1,7 @@
-require_relative './item'
+require_relative '../classes/item'
+
 class Author
-  attr_accessor :first_name, :last_name
+  attr_accessor :first_name, :last_name, :id
   attr_reader :items
 
   def initialize(first_name, last_name)
@@ -11,7 +12,7 @@ class Author
   end
 
   def add_item(item)
-    @items << item
+    @items.push(item)
     item.author = self
   end
 end

@@ -1,4 +1,9 @@
 require './app'
+require './storage/storage_manager'
+
+@storage = StorageManager.new
+@state = { book_list: [], label_list: [], game_list: [], author_list: [], music_albums_list: [], genres_list: [] }
+@app = App.new(@state)
 
 def main
   choice_array = ['1. List all books',
@@ -12,16 +17,16 @@ def main
                   '9. Add a game',
                   '0. Exit']
 
-  state = { book_list: [], label_list: [], music_albums_list: [], genres_list: [] }
   input = nil
-  app = App.new(state)
 
+  @storage.fetch_data(@state)
   while input != 0
     puts 'Welcome To My Catalog. Pick An Option From The List Below'
     puts choice_array
     input = gets.chomp.to_i
-    app.methods[input].call if input.between?(1, 9)
+    @app.methods[input].call if input.between?(1, 9)
   end
+  @storage.save_data(@state)
 end
 
 main

@@ -1,12 +1,11 @@
 require 'time'
-require_relative './author'
 
 class Item
   attr_accessor :publish_date, :label, :author, :genre
   attr_reader :archived, :id
 
-  def initialize(publish_date)
-    @id = Random.rand(1..1000)
+  def initialize(publish_date, id = Random.rand(1..1000))
+    @id = id
     @publish_date = publish_date
     @archived = false
     @genre = nil
@@ -22,9 +21,9 @@ class Item
     label.items.push(self) unless label.items.include?(self)
   end
 
-  def add_author(author)
+  def add_author=(author)
     @author = author
-    author.items << self unless author.items.include?(self)
+    author.items.push(self) unless author.items.include?(self)
   end
 
   def move_to_archive
@@ -40,10 +39,3 @@ class Item
     @publish_date < formatted_date
   end
 end
-
-# date = Item.new('1900-01-01')
-# p date
-# p date.can_be_archived?
-
-# new_item = Item.can_be_archived?
-# p new_item
