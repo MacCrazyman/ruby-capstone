@@ -9,6 +9,8 @@ class StorageManager
   end
 
   def do_fetch_work(state)
+    @input.read_games(state)
+    @input.read_author(state)
     @input.read_books(state)
     @input.read_labels(state)
   end
@@ -21,5 +23,7 @@ class StorageManager
     @output.create_files
     @output.save_books(state)
     @output.save_labels(state)
+    @output.save_games(state)
+    @output.save_authors(state)
   end
 end
