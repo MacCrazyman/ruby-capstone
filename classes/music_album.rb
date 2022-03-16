@@ -19,8 +19,8 @@ class MusicAlbum < Item
     "Album - publish date: #{@publish_date} | genre: #{@genre.name} | on spotify?: #{@on_spotify}"
   end
 
-  def to_json
-    {publish_date: @publish_date, id: @id, on_spotify: @on_spotify, genre: @genre, archived: @archived}
+  def to_json(*_args)
+    {publish_date: @publish_date.to_s, id: @id, on_spotify: @on_spotify, genre: @genre.name, archived: @archived}
   end
 
   private

@@ -21,5 +21,6 @@ class StorageManager
     @output.create_files
     @output.save_books(state)
     @output.save_labels(state)
+    @output.save_music_albums(state)
   end
 end
