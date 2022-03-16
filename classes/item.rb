@@ -1,16 +1,19 @@
 require 'time'
 
 class Item
-  attr_accessor :publish_date
+  attr_accessor :publish_date, :genre
   attr_reader :archived
 
   def initialize(publish_date)
     @id = Random.rand(1..1000)
     @publish_date = publish_date
     @archived = false
+    @genre = nil
   end
 
-  def add_genre; end
+  def add_genre(genre)
+    genre.add_item(self)
+  end
 
   def add_label; end
 

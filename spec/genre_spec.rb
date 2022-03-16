@@ -12,10 +12,10 @@ describe 'Genre' do
   it 'should return the name string' do
     expect(@genre.name).to eql 'rock'
   end
-
-  # it 'can be archived' do
-  #   archived_before = @genre.archived
-  #   @genre.move_to_archive
-  #   expect(@genre.archived).not_to be archived_before
-  # end
+  
+  it 'genre should be asociated to item' do
+    item = Item.new('2020-10-10')
+    @genre.add_item(item)
+    expect(item.genre).to be @genre
+  end
 end
