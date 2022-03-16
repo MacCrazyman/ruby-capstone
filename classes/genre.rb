@@ -6,7 +6,7 @@ class Genre
     @name = name
     @items = []
   end
-  
+
   # public: creates the relationship between the item and the genre class.
   #
   # item - an instance of an item to set the genre

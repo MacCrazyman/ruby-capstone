@@ -12,7 +12,7 @@ def main
                   '9. Add a game',
                   '0. Exit']
 
-  state = { book_list: [], label_list: [], music_albums_list: [], genres_list:[] }
+  state = { book_list: [], label_list: [], music_albums_list: [], genres_list: [] }
   input = nil
   app = App.new(state)
 
