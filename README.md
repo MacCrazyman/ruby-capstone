@@ -18,6 +18,12 @@ You need to have Ruby in you operating system to run the irb terminal.
 
 ## Authors
 
+👤 **Khusiima Luke Masaba**
+
+- GitHub: [@Lucas-Masaba](https://github.com/Lucas-Masaba)
+- Twitter: [@MasabaLuke](https://twitter.com/MasabaLuke)
+- LinkedIn: [Khusiima Luke Masaba](https://linkedin.com/in/khusiima-luke-masaba)
+
 🧑‍💻 **Diego**
 
 - GitHub: [@disc3110](https://github.com/disc3110)
