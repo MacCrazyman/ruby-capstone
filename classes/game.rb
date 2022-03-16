@@ -19,3 +19,6 @@ class Game < Item
   end
   private :can_be_archived?
 end
+
+game = Game.new('Yes', '1999-01-01', '2000-01-01')
+p game

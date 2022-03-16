@@ -1,5 +1,5 @@
 require 'time'
-require_relative './author'
+# require_relative '../classes/author'
 
 class Item
   attr_accessor :publish_date, :label, :author
@@ -21,7 +21,7 @@ class Item
 
   def add_author(author)
     @author = author
-    author.items << self unless author.items.include?(self)
+    author.items.push(self) unless author.items.include?(self)
   end
 
   def move_to_archive
@@ -39,8 +39,12 @@ class Item
 end
 
 # date = Item.new('1900-01-01')
-# p date
-# p date.can_be_archived?
+# # p date
+# # p date.can_be_archived?
 
-# new_item = Item.can_be_archived?
-# p new_item
+# # new_item = Item.can_be_archived?
+# # p new_item
+
+# author = Author.new('Bobby', 'Shmurda')
+# # item = Item.new('1999-01-01')
+# puts date.add_author(author)
