@@ -26,17 +26,19 @@ class App
 
   def list_of_games
     game_list = @state[:game_list]
-    if game_list && game_list.empty?
+    if game_list.empty?
       puts 'No Games Added Yet ):'
     else
-      game_list.each { |game| puts "Multiplayer: #{game.multiplayer}, Last Seen: #{game.last_played_at}, Publish Date: #{game.publish_date}" }
+      game_list.each do |game|
+        puts "Multiplayer: #{game.multiplayer}, Last Seen: #{game.last_played_at}, Publish Date: #{game.publish_date}"
+      end
     end
   end
 
   def list_all_authors
     author_list = @state[:author_list]
     if author_list.count.zero?
-      puts 'No Games Added Yet ):'
+      puts 'No Authors Added Yet ):'
     else
       author_list.map { |author| puts "First Name: #{author.first_name}, Last Name: #{author.last_name}" }
     end

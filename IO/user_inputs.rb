@@ -40,5 +40,4 @@ module UserInput
     last_name = gets.chomp
     { first_name: first_name, last_name: last_name }
   end
-
 end
