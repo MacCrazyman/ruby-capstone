@@ -2,7 +2,7 @@ require './app'
 require './storage/storage_manager'
 
 @storage = StorageManager.new
-@state = { book_list: [], label_list: [] }
+@state = { book_list: [], label_list: [], game_list: [], author_list: [] }
 @app = App.new(@state)
 
 def main

@@ -1,6 +1,8 @@
 require_relative './IO/user_inputs'
 require_relative './classes/book'
 require_relative './classes/label'
+require_relative './classes/game'
+require_relative './classes/author'
 
 class App
   attr_accessor :methods
@@ -12,14 +14,48 @@ class App
     @methods = {
       1 => -> { list_all_books },
       2 => -> { nothing_to_show },
-      3 => -> { nothing_to_show },
+      3 => -> { list_of_games },
       4 => -> { nothing_to_show },
       5 => -> { list_all_labels },
-      6 => -> { nothing_to_show },
+      6 => -> { list_all_authors },
       7 => -> { add_book },
       8 => -> { nothing_to_show },
-      9 => -> { nothing_to_show }
+      9 => -> { add_a_game }
     }
+  end
+
+  def list_of_games
+    game_list = @state[:game_list]
+    if game_list.empty?
+      puts 'No Games Added Yet ):'
+    else
+      game_list.each do |game|
+        puts "Multiplayer: #{game.multiplayer}, Last Seen: #{game.last_played_at}, Publish Date: #{game.publish_date}"
+      end
+    end
+  end
+
+  def list_all_authors
+    author_list = @state[:author_list]
+    if author_list.count.zero?
+      puts 'No Authors Added Yet ):'
+    else
+      author_list.map { |author| puts "First Name: #{author.first_name}, Last Name: #{author.last_name}" }
+    end
+  end
+
+  def add_a_game
+    multiplayer, last_played_at, publish_date, author = game_input
+    new_game = Game.new(multiplayer, last_played_at, publish_date)
+    @state[:game_list] << new_game
+    store_author(new_game, author) if author
+    p('Game has been created')
+  end
+
+  def store_author(game, author)
+    new_author = Author.new(author[:first_name], author[:last_name])
+    game.add_author = (new_author)
+    @state[:author_list] << new_author
   end
 
   def nothing_to_show
