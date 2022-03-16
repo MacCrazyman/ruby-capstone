@@ -2,17 +2,20 @@ require 'time'
 # require_relative '../classes/author'
 
 class Item
-  attr_accessor :publish_date, :label, :author
+  attr_accessor :publish_date, :label, :author, :genre
   attr_reader :archived, :id
 
   def initialize(publish_date, id = Random.rand(1..1000))
     @id = id
     @publish_date = publish_date
     @archived = false
+    @genre = nil
     @author = author
   end
 
-  def add_genre; end
+  def add_genre(genre)
+    genre.add_item(self)
+  end
 
   def add_label=(label)
     @label = label
