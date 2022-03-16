@@ -17,7 +17,6 @@ class Game < Item
 
     @last_played_at < formatted_date && publish_date < formatted_date_for_publish
   end
-  private :can_be_archived?
 end
 
 game = Game.new('Yes', '1999-01-01', '2000-01-01')
