@@ -13,15 +13,15 @@ describe 'MusicAlbum' do
     expect(@album.on_spotify).to be false
   end
   describe 'Test archive method' do
-  it 'can not be archived' do
-    @album.move_to_archive
-    expect(@album.archived).to eq false
-  end
+    it 'can not be archived' do
+      @album.move_to_archive
+      expect(@album.archived).to eq false
+    end
 
-  it 'can be archived when "on_spotify" is true' do
-    @album.on_spotify = true
-    @album.move_to_archive
-    expect(@album.archived).to eq true
+    it 'can be archived when "on_spotify" is true' do
+      @album.on_spotify = true
+      @album.move_to_archive
+      expect(@album.archived).to eq true
+    end
   end
-end
 end

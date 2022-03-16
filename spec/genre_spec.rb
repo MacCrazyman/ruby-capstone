@@ -12,7 +12,7 @@ describe 'Genre' do
   it 'should return the name string' do
     expect(@genre.name).to eql 'rock'
   end
-  
+
   it 'genre should be asociated to item' do
     item = Item.new('2020-10-10')
     @genre.add_item(item)
