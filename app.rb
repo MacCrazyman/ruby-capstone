@@ -116,7 +116,7 @@ class App
 
   def add_music_album
     publish_date, on_spotify, genre = music_album_input
-    new_album = MusicAlbum.new(publish_date, on_spotify:on_spotify)
+    new_album = MusicAlbum.new(publish_date, on_spotify: on_spotify)
     @state[:music_albums_list] << new_album
     new_genre = @state[:genres_list].select { |item| item.name == genre }[0]
     unless new_genre

@@ -6,6 +6,15 @@ class Input
     @path = path
   end
 
+  def read_music_albums(state)
+    music_albums_json = File.read("#{@path}/music_albums.json")
+    JSON.parse(music_albums_json).each do |album|
+      new_album = MusicAlbum.new(album['publish_date'], album['id'], on_spotify: album['on_spotify'])
+      new_album.move_to_archive if album['archived']
+      state[:music_albums_list] << new_album
+    end
+  end
+
   def read_books(state)
     books_json = File.read("#{@path}/books.json")
     books_hash = JSON.parse(books_json)
