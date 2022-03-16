@@ -5,7 +5,6 @@ require './storage/storage_manager'
 @state = { book_list: [], label_list: [] }
 @app = App.new(@state)
 
-
 def main
   choice_array = ['1. List all books',
                   '2. List all music albums',
@@ -17,9 +16,8 @@ def main
                   '8. Add a music album',
                   '9. Add a game',
                   '0. Exit']
-  
+
   input = nil
-  
 
   @storage.fetch_data(@state)
   while input != 0
