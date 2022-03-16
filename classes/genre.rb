@@ -26,6 +26,6 @@ class Genre
   end
 
   def to_json
-    {name: @name, id: @id, items: @items.map {|item| item.to_json}}
+    {name: @name, id: @id, items: @items.map {|item| item.id}}
   end
 end

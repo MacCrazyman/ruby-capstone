@@ -10,6 +10,8 @@ class Output
     Dir.mkdir(@path) unless Dir.exist?(@path)
     FileUtils.touch("#{@path}/books.json") unless File.exist?("#{@path}/books.json")
     FileUtils.touch("#{@path}/labels.json") unless File.exist?("#{@path}/labels.json")
+    FileUtils.touch("#{@path}/music_albums.json") unless File.exist?("#{@path}/music_albums.json")
+    FileUtils.touch("#{@path}/genres.json") unless File.exist?("#{@path}/genres.json")
   end
 
   def save_books(state)
@@ -28,5 +30,10 @@ class Output
     end
     labels_json = JSON.generate(labels_hash)
     File.write("#{@path}/labels.json", labels_json)
+  end
+
+  def save_music_albums(state)
+    music_albums = state[:music_albums_list].map {|album| album.to_json}
+    File.write("#{@path}/music_albums.json",JSON.pretty_generate(music_albums))
   end
 end
