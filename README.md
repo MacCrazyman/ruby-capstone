@@ -1,67 +1,43 @@
-# Ruby Course
+# Catalog of things
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+> this project is  a console app built to help you keep track of the books, music almbums, movies and games you won.
 
-## Set-up Rubocop GitHub Action
 
-[Rubocop](https://www.rubocop.org/) is a Ruby static code analyzer (a.k.a. linter) and code formatter. It will enforce many of the guidelines outlined in the community [Ruby Style Guide](https://rubystyle.guide/).
+## Getting Started
 
-This GitHub Action is going to run [Rubocop](https://docs.rubocop.org/en/stable/) to help you find style issues.
+You need to have Ruby in you operating system to run the irb terminal.
+> if you don't have Ruby installed in your machine, you can follow [this link](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md
+) to find instructions for all operating systems.
 
-Please do the following **steps in this order**:
+* Fork a copy to your repository and clone it locally: `git@github.com:MacCrazyman/ruby-capstone.git`
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+* Move to the main folder of the app `cd path/ruby-capstone`
 
-![gh actions checks](../assets/images/gh-actions-rubocop-linters-checks.png)
+* Now, run program in your terminal `ruby main.rb`
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
 
-![gh actions failing checks](../assets/images/gh-actions-rubocop-failing-checks.png)
+## Authors
 
-## [OPTIONAL]Set-up RSpec GitHub Action
+🧑‍💻 **Diego**
 
-You can run your tests with GitHub Actions to ensure that they are passing before merging a PR.
+- GitHub: [@disc3110](https://github.com/disc3110)
+- LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
 
-To use the GitHub Action to run your tests, please do the following **steps in this order**:
 
-1. Add a copy of [`.github/workflows/tests.yml`](.github/workflows/tests.yml) to your `.github/workflows` folder.
-    - **Remember** to use the file linked above
-    - Do not modify or delete the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) file that should already be in that folder.
-    - RSpec by default will try to run any file ending in `_spec.rb` inside the `spec` folder. Make sure to follow this convention for your tests files so `rspec` can run your spec files.
-    - You can modify the [`.github/workflows/tests.yml`](.github/workflows/tests.yml) file to better fit your custom needs.
-3. When you open your pull request you should see the result of the GitHub Action:
+## 🤝 Contributing
 
-![gh actions checks](../assets/images/gh-actions-rspec-tests-checks.png)
+Contributions, issues, and feature requests are welcome!
 
-Click on the `Details` link of the test action to check the results of your tests.
+Feel free to check the [issues page](../../issues/).
 
-## Set-up linters in your local env
+## Show your support
 
-### [RuboCop](https://docs.rubocop.org/en/stable/)
+Give a ⭐️ if you like this project!
 
-1. Add this line to the `Gemfile`
-    ```
-    gem 'rubocop', '>= 1.0', '< 2.0'
-    ```
-    *not sure how to use Gemfile? Read [this](https://bundler.io/v1.15/guides/bundler_setup.html).*
-2. Run `bundle install`.
-3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
-4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-5. Run `rubocop`.
-6. Fix linter errors.
-7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+## Acknowledgments
 
-## Troubleshooting
+- Microverse
 
-- While using Colorize gem, if you are facing errors with Rspec related to 
-    ```bash
-    LoadError:
-    cannot load such file -- colorize
-    ```
-    please remove ```--deployment``` from line no. [26](https://github.com/shubham14p3/Ruby-capstone-project/blob/ca86784cc88bea7c933e329c0953f07e21bcf6ca/.github/workflows/tests.yml#L16) of test.yml file.
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
