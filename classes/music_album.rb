@@ -15,6 +15,14 @@ class MusicAlbum < Item
     @on_spotify = on_spotify
   end
 
+  def to_s
+    "Album - publish date: #{@publish_date} | genre: #{@genre.name} | on spotify?: #{@on_spotify}"
+  end
+
+  def to_json
+    {publish_date: @publish_date, id: @id, on_spotify: @on_spotify, genre: @genre, archived: @archived}
+  end
+
   private
 
   # private: return if the Album can be archived or not.
