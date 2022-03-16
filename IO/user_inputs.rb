@@ -27,7 +27,7 @@ module UserInput
     on_spotify = gets.chomp.downcase == 'y'
     print 'Genre: '
     genre = gets.chomp
-    { publish_date: publish_date, on_spotify: on_spotify, genre: genre }
+    [ publish_date, on_spotify, genre ]
   end
 
   def game_input
