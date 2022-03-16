@@ -1,5 +1,4 @@
 require 'time'
-# require_relative '../classes/author'
 
 class Item
   attr_accessor :publish_date, :label, :author, :genre
@@ -40,14 +39,3 @@ class Item
     @publish_date < formatted_date
   end
 end
-
-# date = Item.new('1900-01-01')
-# # p date
-# # p date.can_be_archived?
-
-# # new_item = Item.can_be_archived?
-# # p new_item
-
-# author = Author.new('Bobby', 'Shmurda')
-# # item = Item.new('1999-01-01')
-# puts date.add_author(author)
