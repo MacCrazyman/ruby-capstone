@@ -12,14 +12,15 @@ def main
                   '9. Add a game',
                   '0. Exit']
 
+  state = { book_list: [], label_list: [] }
   input = nil
-  app = App.new
+  app = App.new(state)
 
   while input != 0
     puts 'Welcome To My Catalog. Pick An Option From The List Below'
     puts choice_array
     input = gets.chomp.to_i
-    app.methods[input].call if input.between?(0, 9)
+    app.methods[input].call if input.between?(1, 9)
   end
 end
 
