@@ -10,8 +10,8 @@ class Output
     Dir.mkdir(@path) unless Dir.exist?(@path)
     FileUtils.touch("#{@path}/books.json") unless File.exist?("#{@path}/books.json")
     FileUtils.touch("#{@path}/labels.json") unless File.exist?("#{@path}/labels.json")
-    FileUtils.touch("#{@path}/games.json") unless File.exist?("#{@path}/books.json")
-    FileUtils.touch("#{@path}/authors.json") unless File.exist?("#{@path}/labels.json")
+    FileUtils.touch("#{@path}/games.json") unless File.exist?("#{@path}/games.json")
+    FileUtils.touch("#{@path}/authors.json") unless File.exist?("#{@path}/games.json")
   end
 
   def save_games(state)
