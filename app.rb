@@ -1,6 +1,7 @@
 require_relative './IO/user_inputs'
 require_relative './classes/book'
 require_relative './classes/label'
+require_relative './classes/music_album'
 
 class App
   attr_accessor :methods
@@ -17,7 +18,7 @@ class App
       5 => -> { list_all_labels },
       6 => -> { nothing_to_show },
       7 => -> { add_book },
-      8 => -> { nothing_to_show },
+      8 => -> { add_music_album },
       9 => -> { nothing_to_show }
     }
   end
@@ -74,5 +75,9 @@ class App
     return puts 'There are no genres to display' if genres_list.empty?
 
     genres_list.each_with_index { |genre, index| p "#{index} -> #{genre}" }
+  end
+
+  def add_music_album
+    @state[:music_albums_list] << MusicAlbum.new(music_album_input)
   end
 end
