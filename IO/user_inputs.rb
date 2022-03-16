@@ -20,6 +20,14 @@ module UserInput
     { title: label_title, color: label_color }
   end
 
+  def music_album_input
+    print 'Publish Date(yyyy-mm-dd): '
+    publish_date = gets.chomp
+    print 'Is this album on Spotify? [Y/N]'
+    on_spotify = gets.chomp.downcase == 'y'
+    { publish_date: publish_date, on_spotify: on_spotify }
+  end
+
   def game_input
     print 'Is this a multiplayer game? Enter Yes or No: '
     multiplayer = gets.chomp

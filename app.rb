@@ -1,6 +1,7 @@
 require_relative './IO/user_inputs'
 require_relative './classes/book'
 require_relative './classes/label'
+require_relative './classes/music_album'
 require_relative './classes/game'
 require_relative './classes/author'
 
@@ -13,13 +14,13 @@ class App
     @state = state
     @methods = {
       1 => -> { list_all_books },
-      2 => -> { nothing_to_show },
+      2 => -> { list_all_music_albums },
       3 => -> { list_of_games },
-      4 => -> { nothing_to_show },
+      4 => -> { list_all_genres },
       5 => -> { list_all_labels },
       6 => -> { list_all_authors },
       7 => -> { add_book },
-      8 => -> { nothing_to_show },
+      8 => -> { add_music_album },
       9 => -> { add_a_game }
     }
   end
@@ -96,5 +97,23 @@ class App
     new_label = Label.new(label[:title], label[:color])
     book.add_label = (new_label)
     @state[:label_list] << new_label
+  end
+
+  def list_all_music_albums
+    music_albums = @state[:music_albums_list]
+    return puts 'There are no albums yet' if music_albums.empty?
+
+    music_albums.each_with_index { |album, index| p "#{index} -> #{album}" }
+  end
+
+  def list_all_genres
+    genres_list = @state[:genres_list]
+    return puts 'There are no genres to display' if genres_list.empty?
+
+    genres_list.each_with_index { |genre, index| p "#{index} -> #{genre}" }
+  end
+
+  def add_music_album
+    @state[:music_albums_list] << MusicAlbum.new(music_album_input)
   end
 end
