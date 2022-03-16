@@ -13,7 +13,7 @@ class App
       1 => -> { list_all_books },
       2 => -> { list_all_music_albums },
       3 => -> { nothing_to_show },
-      4 => -> { nothing_to_show },
+      4 => -> { list_all_genres },
       5 => -> { list_all_labels },
       6 => -> { nothing_to_show },
       7 => -> { add_book },
@@ -63,8 +63,15 @@ class App
   end
 
   def list_all_music_albums
-    return puts 'There are no albums yet' if @state[:music_albums_list].empty?
-    @state[:music_albums_list].each_with_index {|album, index| p "#{index} -> #{album}"}
+    music_albums = @state[:music_albums_list]
+    return puts 'There are no albums yet' if music_albums.empty?
+    music_albums.each_with_index {|album, index| p "#{index} -> #{album}"}
+  end
+
+  def list_all_genres
+    genres_list = @state[:genres_list]
+    return puts 'There are no genres to display' if genres_list.empty?
+    genres_list.each_with_index {|genre, index| p "#{index} -> #{genre}"}
   end
 
 end
