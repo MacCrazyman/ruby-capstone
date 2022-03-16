@@ -12,10 +12,16 @@ describe 'MusicAlbum' do
   it 'should return the on_spotify property' do
     expect(@album.on_spotify).to be false
   end
-
-  it 'can be archived' do
-    archived_before = @album.archived
+  describe 'Test archive method' do
+  it 'can not be archived' do
     @album.move_to_archive
-    expect(@album.archived).not_to be archived_before
+    expect(@album.archived).to eq false
   end
+
+  it 'can be archived when "on_spotify" is true' do
+    @album.on_spotify = true
+    @album.move_to_archive
+    expect(@album.archived).to eq true
+  end
+end
 end
