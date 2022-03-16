@@ -16,11 +16,11 @@ class MusicAlbum < Item
   end
 
   def to_s
-    "Album - publish date: #{@publish_date} | genre: #{@genre.name} | on spotify?: #{@on_spotify}"
+    "Album - publish date: #{@publish_date} | genre: #{@genre.name} | on spotify?: #{@on_spotify} | id: #{@id}"
   end
 
   def to_json(*_args)
-    {publish_date: @publish_date.to_s, id: @id, on_spotify: @on_spotify, genre: @genre.name, archived: @archived}
+    { publish_date: @publish_date.to_s, id: @id, on_spotify: @on_spotify, genre: @genre.name, archived: @archived }
   end
 
   private

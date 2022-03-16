@@ -34,7 +34,12 @@ class Output
   end
 
   def save_music_albums(state)
-    music_albums = state[:music_albums_list].map {|album| album.to_json}
-    File.write("#{@path}/music_albums.json",JSON.pretty_generate(music_albums))
+    music_albums = state[:music_albums_list].map(&:to_json)
+    File.write("#{@path}/music_albums.json", JSON.pretty_generate(music_albums))
+  end
+
+  def save_genres(state)
+    genres_list = state[:genres_list].map(&:to_json)
+    File.write("#{@path}/genres.json", JSON.pretty_generate(genres_list))
   end
 end

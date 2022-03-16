@@ -22,5 +22,6 @@ class StorageManager
     @output.save_books(state)
     @output.save_labels(state)
     @output.save_music_albums(state)
+    @output.save_genres(state)
   end
 end
