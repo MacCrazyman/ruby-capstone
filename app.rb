@@ -11,7 +11,7 @@ class App
     @state = state
     @methods = {
       1 => -> { list_all_books },
-      2 => -> { nothing_to_show },
+      2 => -> { list_all_music_albums },
       3 => -> { nothing_to_show },
       4 => -> { nothing_to_show },
       5 => -> { list_all_labels },
@@ -61,4 +61,10 @@ class App
     book.add_label = (new_label)
     @state[:label_list] << new_label
   end
+
+  def list_all_music_albums
+    return puts 'There are no albums yet' if @state[:music_albums_list].empty?
+    @state[:music_albums_list].each_with_index {|album, index| p "#{index} -> #{album}"}
+  end
+
 end
