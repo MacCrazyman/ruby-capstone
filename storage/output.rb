@@ -8,12 +8,6 @@ class Output
 
   def create_files
     Dir.mkdir(@path) unless Dir.exist?(@path)
-    FileUtils.touch("#{@path}/books.json") unless File.exist?("#{@path}/books.json")
-    FileUtils.touch("#{@path}/labels.json") unless File.exist?("#{@path}/labels.json")
-    # FileUtils.touch("#{@path}/music_albums.json") unless File.exist?("#{@path}/music_albums.json")
-    # FileUtils.touch("#{@path}/genres.json") unless File.exist?("#{@path}/genres.json")
-    FileUtils.touch("#{@path}/games.json") unless File.exist?("#{@path}/games.json")
-    FileUtils.touch("#{@path}/authors.json") unless File.exist?("#{@path}/games.json")
   end
 
   def save_games(state)
