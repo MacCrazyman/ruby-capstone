@@ -11,6 +11,8 @@ class StorageManager
   def do_fetch_work(state)
     @input.read_books(state)
     @input.read_labels(state)
+    @input.read_music_albums(state)
+    @input.read_genres(state)
   end
 
   def fetch_data(state)

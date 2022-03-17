@@ -15,6 +15,17 @@ class Input
     end
   end
 
+  def read_genres(state)
+    genres_json = File.read("#{@path}/genres.json")
+    JSON.parse(genres_json).each do |genre|
+      new_genre = Genre.new(genre['name'])
+      genre['items'].each do |album_id|
+        state[:music_albums_list].select { |album| album.id == album_id }[0].add_genre(new_genre)
+      end
+      state[:genres_list] << new_genre
+    end
+  end
+
   def read_books(state)
     books_json = File.read("#{@path}/books.json")
     books_hash = JSON.parse(books_json)
