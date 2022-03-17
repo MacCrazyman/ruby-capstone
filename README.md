@@ -2,6 +2,9 @@
 
 > this project is  a console app built to help you keep track of the books, music almbums, movies and games you won.
 
+## Video demo
+[Google Drive video](https://drive.google.com/file/d/1zXsnp-2WVNgeWj28ehJnlTlNUbCMEsmk/view?usp=sharing)
+
 
 ## Getting Started
 
