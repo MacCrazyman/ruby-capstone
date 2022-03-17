@@ -31,9 +31,9 @@ module UserInput
   end
 
   def game_input
-    print 'Is this a multiplayer game? Enter Yes or No: '
+    print 'Is this a multiplayer game? Enter [Y/N]: '
     multiplayer = gets.chomp
-    print 'Enter the date you last played:'
+    print 'Enter the date you last played(yyyy-mm-dd):'
     last_played_at = gets.chomp
     print 'Publish Date(yyyy-mm-dd): '
     publish_date = gets.chomp
@@ -46,7 +46,7 @@ module UserInput
   def author_input
     print 'First Name: '
     first_name = gets.chomp
-    print 'Label color: '
+    print 'Last Name: '
     last_name = gets.chomp
     { first_name: first_name, last_name: last_name }
   end
