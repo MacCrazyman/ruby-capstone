@@ -9,12 +9,12 @@ class StorageManager
   end
 
   def do_fetch_work(state)
-    @input.read_games(state)
-    @input.read_author(state)
-    @input.read_books(state)
-    @input.read_labels(state)
-    @input.read_music_albums(state)
-    @input.read_genres(state)
+    @input.read_games(state) if File.exist?("#{@path}/games.json")
+    @input.read_author(state) if File.exist?("#{@path}/authors.json")
+    @input.read_books(state) if File.exist?("#{@path}/books.json")
+    @input.read_labels(state) if File.exist?("#{@path}/labels.json")
+    @input.read_music_albums(state) if File.exist?("#{@path}/music_albums.json")
+    @input.read_genres(state) if File.exist?("#{@path}/genres.json")
   end
 
   def fetch_data(state)

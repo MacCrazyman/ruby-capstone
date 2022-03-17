@@ -1,6 +1,5 @@
 require 'json'
 require_relative '../classes/item'
-require_relative '../classes/game'
 
 class Input
   def initialize(path)
@@ -26,7 +25,7 @@ class Input
       state[:genres_list] << new_genre
     end
   end
-  
+
   def read_games(state)
     games_json = File.read("#{@path}/games.json")
     games_hash = JSON.parse(games_json)
