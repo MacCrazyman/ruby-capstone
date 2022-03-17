@@ -2,6 +2,7 @@ require_relative './IO/user_inputs'
 require_relative './classes/book'
 require_relative './classes/label'
 require_relative './classes/music_album'
+require_relative './classes/genre'
 require_relative './classes/game'
 require_relative './classes/author'
 
@@ -114,6 +115,14 @@ class App
   end
 
   def add_music_album
-    @state[:music_albums_list] << MusicAlbum.new(music_album_input)
+    publish_date, on_spotify, genre = music_album_input
+    new_album = MusicAlbum.new(publish_date, on_spotify: on_spotify)
+    @state[:music_albums_list] << new_album
+    new_genre = @state[:genres_list].select { |item| item.name == genre }[0]
+    unless new_genre
+      new_genre = Genre.new(genre)
+      @state[:genres_list] << new_genre
+    end
+    new_genre.add_item(new_album)
   end
 end

@@ -30,6 +30,12 @@ You need to have Ruby in you operating system to run the irb terminal.
 - LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
 
 
+👤 **Leonardo**
+
+- GitHub: [@maccrazyman](https://github.com/MacCrazyman)
+- Twitter: [@maccrazyman](https://github.com/MacCrazyman)
+- LinkedIn: [LinkedIn](https://github.com/MacCrazyman)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

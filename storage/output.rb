@@ -8,10 +8,6 @@ class Output
 
   def create_files
     Dir.mkdir(@path) unless Dir.exist?(@path)
-    FileUtils.touch("#{@path}/books.json") unless File.exist?("#{@path}/books.json")
-    FileUtils.touch("#{@path}/labels.json") unless File.exist?("#{@path}/labels.json")
-    FileUtils.touch("#{@path}/games.json") unless File.exist?("#{@path}/games.json")
-    FileUtils.touch("#{@path}/authors.json") unless File.exist?("#{@path}/games.json")
   end
 
   def save_games(state)
@@ -48,5 +44,15 @@ class Output
     end
     labels_json = JSON.generate(labels_hash)
     File.write("#{@path}/labels.json", labels_json)
+  end
+
+  def save_music_albums(state)
+    music_albums = state[:music_albums_list].map(&:to_json)
+    File.write("#{@path}/music_albums.json", JSON.pretty_generate(music_albums))
+  end
+
+  def save_genres(state)
+    genres_list = state[:genres_list].map(&:to_json)
+    File.write("#{@path}/genres.json", JSON.pretty_generate(genres_list))
   end
 end

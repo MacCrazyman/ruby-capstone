@@ -25,7 +25,9 @@ module UserInput
     publish_date = gets.chomp
     print 'Is this album on Spotify? [Y/N]'
     on_spotify = gets.chomp.downcase == 'y'
-    { publish_date: publish_date, on_spotify: on_spotify }
+    print 'Genre: '
+    genre = gets.chomp
+    [publish_date, on_spotify, genre]
   end
 
   def game_input
