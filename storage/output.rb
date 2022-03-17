@@ -16,7 +16,7 @@ class Output
         publish_date: game.publish_date,
         id: game.id }
     end
-    games_json = JSON.generate(games_hash)
+    games_json = JSON.pretty_generate(games_hash)
     File.write("#{@path}/games.json", games_json)
   end
 
@@ -24,7 +24,7 @@ class Output
     authors_hash = state[:author_list].map do |author|
       { first_name: author.first_name, last_name: author.last_name, items: author.items.map(&:id) }
     end
-    authors_json = JSON.generate(authors_hash)
+    authors_json = JSON.pretty_generate(authors_hash)
     File.write("#{@path}/authors.json", authors_json)
   end
 
