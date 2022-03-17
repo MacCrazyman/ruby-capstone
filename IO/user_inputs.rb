@@ -1,4 +1,8 @@
+require_relative '../validations/validations.rb'
 module UserInput
+
+  include Validate
+
   def book_input
     print 'Publisher: '
     publisher = gets.chomp
@@ -6,6 +10,7 @@ module UserInput
     cover_state = gets.chomp
     print 'Publish Date(yyyy-mm-dd): '
     publish_date = gets.chomp
+    validate_date(publish_date)
     print 'Do you want yo add a label? (press 1 for yes)'
     user_choice = gets.chomp
     label = label_input if user_choice.to_i == 1
@@ -33,12 +38,19 @@ module UserInput
   def game_input
     print 'Is this a multiplayer game? Enter [Y/N]: '
     multiplayer = gets.chomp
+    validate_boolean(multiplayer)
+
     print 'Enter the date you last played(yyyy-mm-dd):'
     last_played_at = gets.chomp
+    validate_date(last_played_at)
+
     print 'Publish Date(yyyy-mm-dd): '
     publish_date = gets.chomp
-    print 'Do you want yo add an author? (press 1 for yes)'
+    validate_date(publish_date)
+
+    print 'Do you want yo add an author? [Y/N]'
     user_choice = gets.chomp
+    validate_boolean(user_choice)
     author = author_input if user_choice.to_i == 1
     [multiplayer, last_played_at, publish_date, author]
   end
